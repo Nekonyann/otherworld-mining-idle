@@ -11,10 +11,17 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    ColorfulText: typeof import('./src/components/ui/ColorfulText.vue')['default']
     copy: typeof import('./src/components/Mine/index copy.vue')['default']
     Dialog: typeof import('./src/components/Dialog/index.vue')['default']
+    GameLog: typeof import('./src/components/GameLog/index.vue')['default']
+    GameLogs: typeof import('./src/components/InfoView/GameLogs.vue')['default']
+    GameLogs1: typeof import('./src/components/InfoView/GameLogs1.vue')['default']
     Head: typeof import('./src/components/head.vue')['default']
+    InfoView: typeof import('./src/components/InfoView/index.vue')['default']
     ItemProgress: typeof import('./src/components/InfoView/ItemProgress.vue')['default']
+    LogsView: typeof import('./src/components/LogsView/index.vue')['default']
+    MapView: typeof import('./src/components/MapView/index.vue')['default']
     Mine: typeof import('./src/components/Mine/index.vue')['default']
     Miner: typeof import('./src/components/Miner/index.vue')['default']
     NButton: typeof import('naive-ui')['NButton']
@@ -43,7 +50,8 @@ declare module 'vue' {
     NTabs: typeof import('naive-ui')['NTabs']
     NTag: typeof import('naive-ui')['NTag']
     NText: typeof import('naive-ui')['NText']
-    PackItem: typeof import('./src/components/Mine/PackItem.vue')['default']
+    PackItem: typeof import('./src/components/ui/PackItem.vue')['default']
+    RarityText: typeof import('./src/components/ui/RarityText.vue')['default']
     Status: typeof import('./src/components/Status/index.vue')['default']
   }
 }

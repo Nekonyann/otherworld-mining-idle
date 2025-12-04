@@ -1,5 +1,5 @@
 <style lang="scss" scoped>
-.header{
+.header {
   height: 50px;
 }
 .main {
@@ -13,34 +13,23 @@
 </style>
 
 <template>
-    <div class="header">
+  <div class="header">
     <!-- 顶部导航栏组件 -->
-    <n-space 
-    justify="space-between" 
-    class="main"
-    align="center">
+    <n-space justify="space-between" class="main" align="center">
       <n-space align="center">
-        <n-text class="logo">
-        异世矿工放置
-        </n-text>
-        <n-button
-        text
-        @click="showVersionLog = true">
-        dev.081624
-        </n-button>
+        <n-text class="logo"> 异世矿工放置 </n-text>
+        <n-button text @click="showVersionLog = true"> </n-button>
         <n-modal
-        v-model:show="showVersionLog"
-        class="custom-card"
-        preset="card"
-        style="width: 600px"
-        title="更新日志"
-        size="huge"
-        :bordered="false"
-        :segmented="segmented"
+          v-model:show="showVersionLog"
+          class="custom-card"
+          preset="card"
+          style="width: 600px"
+          title="更新日志"
+          size="huge"
+          :bordered="false"
+          :segmented="segmented"
         >
-          <template #header-extra>
-            
-          </template>
+          <template #header-extra> </template>
           开发
         </n-modal>
       </n-space>
@@ -51,23 +40,17 @@
         <!--TODO 天气 -->
       </n-space>
       <n-space align="center">
-        <n-space>
-          
-          保存
-          
-        </n-space>
-        <n-divider vertical/>
-          图鉴
-          设置
-          数据
+        <n-space> 保存 </n-space>
+        <n-divider vertical />
+        图鉴 设置 数据
         <!--TODO 主题切换 -->
         <!-- <n-button circle tertiary @click="changeTheme(!isDarkTheme)">
         </n-button> -->
       </n-space>
     </n-space>
-    </div>
+  </div>
 </template>
 
 <script setup>
-const showVersionLog = ref(false)
+const showVersionLog = ref(false);
 </script>

@@ -22,11 +22,10 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"],
-      "@utils/*": ["src/utils/*"],
-      "@plugins/*": ["src/plugins/*"],
+      "@/*": ["./src/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@plugins/*": ["./src/plugins/*"],
     }
   },
   "include": [
@@ -34,5 +33,7 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "src/**/*.ts",
-    "src/locales/*.json"]
+    "src/locales/*.json",
+    "auto-imports.d.ts"
+  ]
 }
