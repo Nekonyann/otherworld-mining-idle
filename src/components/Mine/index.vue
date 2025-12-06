@@ -22,21 +22,6 @@
       justify-content: space-between;
       height: 100%;
       width: 30px;
-      button {
-        width: 30px;
-        height: 30px;
-        background-color: #000;
-        color: #fff;
-        border: none;
-        border-radius: 0.2vw;
-        cursor: pointer;
-      }
-      .floor-bar {
-        width: 100%;
-        height: 100%;
-        background-color: #464646;
-        margin: 10px 0;
-      }
     }
 
     .rpg {
@@ -159,11 +144,7 @@
     <n-layout-content>
       <n-layout has-sider>
         <n-layout-sider :width="35">
-          <div class="floor-control">
-            <button>上</button>
-            <div class="floor-bar"></div>
-            <button>下</button>
-          </div>
+          <AltitudeMap class="floor-control"></AltitudeMap>
         </n-layout-sider>
         <n-layout-content>
           <div class="rpg">
@@ -260,6 +241,7 @@ import { ref, onMounted, nextTick, watch } from "vue";
 import PackItem from "@/components/ui/PackItem.vue";
 import DialogView from "@/components/Dialog/index.vue";
 import MapView from "@/components/MapView/index.vue";
+import AltitudeMap from "@/components/AltitudeMap/index.vue";
 import { useGameStore } from "@/store/modules/gameStore";
 import { MSC1A1A1 } from "@/data/Dialogues";
 
@@ -272,8 +254,8 @@ const backpack = ref<Backpack>({
 
 const currentArea = computed(() => gameStore.currentArea);
 
-const percentage = ref(10);
-const showMap = ref(false);
+const percentage = ref<number>(10);
+const showMap = ref<boolean>(false);
 
 const openMap = () => {
   showMap.value = !showMap.value;
@@ -285,7 +267,7 @@ const showLogBox = () => {
   split.value = split.value === 0.7 ? 0.98 : 0.7;
 };
 
-const showDialog = ref(false);
+const showDialog = ref<boolean>(false);
 const dialogs = ref();
 
 const handleShowDialog = (value: boolean) => {

@@ -9,7 +9,10 @@ export const AREAS_DATA: Record<string, Area> = {
     level: 0,
     unlocked: true,
     height: 1600,
+    landColor: "#4caf50",
+    floors: [-5, 1],
     maxFloor: 0,
+    minerals: [],
   },
   YINYUNZHISEN: {
     id: 2,
@@ -18,13 +21,13 @@ export const AREAS_DATA: Record<string, Area> = {
     level: 0,
     unlocked: true,
     height: 1600,
-    maxFloor: 30,
+    floors: [-1, 1],
     landColor: "#4a7c59",
     resources: [],
     minerals: [
       {
         id: Items.WOOD_ORE.id,
-        height: 1601,
+        floor: [-1, -1],
         abundance: [1, 1],
         explored: true,
         rarity: 1,
@@ -38,7 +41,8 @@ export const AREAS_DATA: Record<string, Area> = {
     level: 5,
     unlocked: false,
     height: 1400,
-    maxFloor: 300,
+    landColor: "#607d8b",
+    floors: [0, 300],
     minerals: [{}],
   },
 };

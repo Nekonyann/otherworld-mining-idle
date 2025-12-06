@@ -13,15 +13,15 @@ export interface Item {
   level: number;
   name: string;
   tooltip: string;
-  // 图标路径
+  /** 图标路径 */
   icon: string;
-  // 稀有度
+  /** 稀有度 */
   rarity: string;
-  // 物品分类
+  /** 物品分类 */
   category: ItemCategory;
-  // 物品数量
+  /** 物品数量 */
   quantity?: number;
-  // 物品上限
+  /** 物品上限 */
   maxQuantity: number;
 }
 
@@ -44,19 +44,29 @@ export interface Entity {
   inventory: Item[];
 }
 
+export interface AreaMinerals {
+  id: number;
+  floor: number;
+  abundance: number;
+  explored: number;
+  rarity: number;
+}
+
 export interface Area {
   id: number;
   name: string;
   description: string;
+  /** 区域等级 */
   level: number;
   image: string;
-  height?: number;
+  height: number;
   unlocked: boolean;
   children?: [];
   maxFloor: number;
-  floors?: number[];
+  floors: [number, number];
+  landColor: string;
   resources?: string[];
-  minerals?: Array<object>[];
+  minerals?: Array<AreaMinerals>[];
   spawnPath?: Array<spawnOre>[];
 }
 

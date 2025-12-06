@@ -58,9 +58,6 @@ const gameStore = useGameStore();
 const areas = computed(() => gameStore.areas);
 const currentAreaId = computed(() => gameStore.currentAreaId);
 const changeArea = (id: number) => {
-  const area = areas.value.find((area) => area.id === id);
-  if (area && (area.unlocked || area.unlocked === undefined)) {
-    gameStore.changeArea(id);
-  }
+  gameStore.changeArea(id);
 };
 </script>

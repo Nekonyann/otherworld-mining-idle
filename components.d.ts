@@ -11,6 +11,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AltitudeMap: typeof import('./src/components/AltitudeMap/index.vue')['default']
     ColorfulText: typeof import('./src/components/ui/ColorfulText.vue')['default']
     copy: typeof import('./src/components/Mine/index copy.vue')['default']
     Dialog: typeof import('./src/components/Dialog/index.vue')['default']
