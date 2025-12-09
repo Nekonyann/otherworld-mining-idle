@@ -29,4 +29,10 @@
 <script setup lang="ts">
 import Mine from "@/components/Mine/index.vue";
 import Status from "@/components/Status/index.vue";
+import { useGameStore } from "@/store/modules/gameStore";
+const gameStore = useGameStore();
+
+onMounted(() => {
+  gameStore.initGame();
+});
 </script>

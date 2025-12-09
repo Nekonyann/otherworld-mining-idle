@@ -11,9 +11,10 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    2: typeof import('./src/components/AltitudeMap/index copy 2.vue')['default']
     AltitudeMap: typeof import('./src/components/AltitudeMap/index.vue')['default']
     ColorfulText: typeof import('./src/components/ui/ColorfulText.vue')['default']
-    copy: typeof import('./src/components/Mine/index copy.vue')['default']
+    copy: typeof import('./src/components/AltitudeMap/index copy.vue')['default']
     Dialog: typeof import('./src/components/Dialog/index.vue')['default']
     GameLog: typeof import('./src/components/GameLog/index.vue')['default']
     GameLogs: typeof import('./src/components/InfoView/GameLogs.vue')['default']

@@ -134,7 +134,8 @@
   <n-layout class="app">
     <n-layout-header>
       <div class="area-title">
-        层级 {{ currentArea.floor }} 海拔 {{ currentArea.height }}m
+        {{ currentArea.floor > 0 ? "地下" : "地上" }}
+        {{ Math.abs(currentArea.floor) }} 层 海拔 {{ currentArea.height }}m
         <n-text>{{ currentArea.areaInfo?.name }}</n-text>
         <n-tag size="small" type="success" :bordered="false">
           {{ $t("gui.level") }} {{ currentArea.areaInfo?.level }}
@@ -176,8 +177,22 @@
                 type="line"
                 :percentage="percentage"
               />
-              <!-- <n-text>当前资源: </n-text>
-              <n-text>剩余: </n-text> -->
+              <n-text
+                >当前层:
+                {{ MAP_BLOCKS_BY_ID[currentMineral?.mineralId]?.name }}</n-text
+              >
+              <n-text
+                >剩余数量:
+                {{
+                  currentMineral?.remainingCount === -1
+                    ? "无法采集"
+                    : currentMineral?.infinite
+                    ? "无限"
+                    : currentMineral?.remainingCount > 0
+                    ? currentMineral?.remainingCount
+                    : "已挖完"
+                }}</n-text
+              >
               <!-- <n-text>HP</n-text>
               <n-progress
                 style="flex: 5; padding-left: 15px"
@@ -244,13 +259,12 @@ import MapView from "@/components/MapView/index.vue";
 import AltitudeMap from "@/components/AltitudeMap/index.vue";
 import { useGameStore } from "@/store/modules/gameStore";
 import { MSC1A1A1 } from "@/data/Dialogues";
+import { MAP_BLOCKS, MAP_BLOCKS_BY_ID } from "@/data/MapBlocks";
 
 const gameStore = useGameStore();
 
-const backpack = ref<Backpack>({
-  items: [],
-  maxItems: 5000,
-});
+const currentMineral = computed(() => gameStore.currentMineral);
+const mapLayers = computed(() => gameStore.mapLayers);
 
 const currentArea = computed(() => gameStore.currentArea);
 

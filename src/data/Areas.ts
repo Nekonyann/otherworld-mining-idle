@@ -1,5 +1,5 @@
 import { Area } from "@/types/game";
-import { Items } from "./Items";
+import { MAP_BLOCKS } from "./MapBlocks";
 
 export const AREAS_DATA: Record<string, Area> = {
   XINGCHENG: {
@@ -22,15 +22,16 @@ export const AREAS_DATA: Record<string, Area> = {
     unlocked: true,
     height: 1600,
     floors: [-1, 1],
+    maxFloor: 0,
     landColor: "#4a7c59",
     resources: [],
     minerals: [
       {
-        id: Items.WOOD_ORE.id,
+        id: MAP_BLOCKS.WOOD.id,
         floor: [-1, -1],
         abundance: [1, 1],
         explored: true,
-        rarity: 1,
+        rarity: 0,
       },
     ],
   },

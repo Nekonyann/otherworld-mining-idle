@@ -53,4 +53,6 @@
 
 <script setup>
 const showVersionLog = ref(false);
+
+const segmented = "";
 </script>

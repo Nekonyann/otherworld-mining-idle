@@ -62,7 +62,13 @@ export interface Area {
   height: number;
   unlocked: boolean;
   children?: [];
+  /** 前面的区域以后再来探索吧
+   * (最大可到达层数)
+   */
   maxFloor: number;
+  /** 区域层高限定
+   * [minFloor, maxFloor]
+   */
   floors: [number, number];
   landColor: string;
   resources?: string[];
